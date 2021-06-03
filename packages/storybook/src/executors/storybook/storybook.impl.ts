@@ -54,7 +54,6 @@ function runInstance(options: StorybookExecutorOptions) {
   return buildDevStandalone({
     ...options,
     ci: true,
-    ignoreWebpackDefaults: options.uiFramework === '@storybook/react',
   });
 }
 

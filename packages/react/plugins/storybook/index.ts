@@ -34,10 +34,15 @@ export const babelDefault = (): Record<
   };
 };
 
-export const webpack = (
+export const core = (prev, options) => ({
+  ...prev,
+  disableWebpackDefaults: true,
+});
+
+export const webpack = async (
   storybookWebpackConfig: Configuration = {},
   options: any
-): Configuration => {
+): Promise<Configuration> => {
   logger.info(
     '=> Loading Nrwl React Webpack configuration "@nrwl/react/plugins/webpack"'
   );
